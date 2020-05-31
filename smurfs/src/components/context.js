@@ -10,16 +10,25 @@ const [data,setData]=useState([]);
     .get(`http://localhost:3333/smurfs`)
     .then(res=>{console.log('axios',res);
      setData(res.data)})
-    .catch(err=>console.log(err))
+    .catch(err=>console.log('get bad'))
 },[]);
 const postSmurf = (item)=>{
+   
+        axios
+        .post(`http://localhost:3333/smurfs`,item)
+        .then(res=>console.log('post',res))
+        .catch(err=>console.log('post bad'))
+    
+};
+const deleteSmurf = (smurfsId)=>{
     axios
-    .post(`http://localhost:3333/smurfs`,item)
-    .then(res=>console.log('post',res))
-    .catch(err=>console.log(err))
+    .delete(`http://localhost:3333/smurfs/${smurfsId}`)
+    .then(res=>console.log('delete',smurfsId))
+    .catch(err=>console.log('delete bad'))
 
-}
+};
+
 return (
-    <SmurfContext.Provider value={[data,postSmurf]}>{props.children}</SmurfContext.Provider>
+    <SmurfContext.Provider value={[data,setData,postSmurf,deleteSmurf]}>{props.children}</SmurfContext.Provider>
 )
 }

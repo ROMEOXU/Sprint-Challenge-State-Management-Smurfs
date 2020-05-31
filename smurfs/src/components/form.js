@@ -1,7 +1,7 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import {SmurfContext} from './context';
 export default function Form() {
- const [data,postSmurf]=useContext(SmurfContext);
+ const [data,setData,postSmurf]=useContext(SmurfContext);//we SHOULD put data here,even it will not show
  const [smurf,setSmurf]=useState({
      name:'',
      age:'',
