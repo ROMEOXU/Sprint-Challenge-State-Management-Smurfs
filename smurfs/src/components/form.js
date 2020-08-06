@@ -17,7 +17,7 @@ export default function Form() {
             <input type ='text'name='name' placeholder='name' value={smurf.name} onChange={handleChange}/>
             <input type ='text'name='age' placeholder='age' value={smurf.age} onChange={handleChange}/> 
             <input type ='text'name='height'placeholder='height' value={smurf.height} onChange={handleChange}/>           
-            <button>Post</button>
+            <button>FETCH</button>
         </form>
         </div>
     )

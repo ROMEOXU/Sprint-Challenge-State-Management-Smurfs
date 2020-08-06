@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function smurflistitem(props) {
+export default function SmurfListItem(props) {
     return (
         <div>
            <li>{props.item.name} </li>
